@@ -16,13 +16,13 @@ city = lambda a: a[2]
 
 devs.sort(key=age)  # This must be done first, outside of the groupby function
 
-engs = [list(g) for k, g in gby(devs, key=age)]
-for en in engs:
-    print(en)
+engineers = [list(d) for key, d in gby(devs, key=age)]
+for eng in engineers:
+    print(eng)
 print()
 
 # Use groupby and store results in a dictionary
-age_groups = {k: list(g) for k, g in gby(devs, key=age)}
+age_groups = {key: list(d) for key, d in gby(devs, key=age)}
 
 # Now you can access each group by age
 print("Developers aged 23:")
