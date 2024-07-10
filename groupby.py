@@ -6,9 +6,8 @@ for k, l in gby("AAABBBCCC"):
 print()
 
 devs = [('Scott', 34, 'Houston', 'B'), ('Sullivan', 23, 'Houston', 'A'), ('Marge', 41, 'Austin', 'C'),
-        ('Howey', 39, 'Chicago', 'B'),
-        ('Suzie', 23, 'San Francisco', 'B'), ('Dave', 41, 'Chicago', 'C'), ('Sammie', 42, 'Rochester', 'A'),
-        ('Katelynn', 34, 'Rochester', 'B'),
+        ('Howey', 39, 'Chicago', 'B'), ('Suzie', 23, 'San Francisco', 'B'), ('Dave', 41, 'Chicago', 'C'), 
+        ('Sammie', 42, 'Rochester', 'A'), ('Katelynn', 34, 'Rochester', 'B'), 
         ('Tamika', 39, 'San Francisco', 'A'), ('Caity', 42, 'San Francisco', 'C')
         ]
 
