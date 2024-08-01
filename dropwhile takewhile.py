@@ -61,8 +61,12 @@ sq_under = small_tickets(sq)
 print(f"{sq_under[0]} sold a total of ${sq_under[2]:,.2f} in small ticket items!")
 print()
 
-words = ['dog', 'cat', 'pig', 'bat', 'mouse', 'horse', 'tiger', 'goat', 'ram', 'owl']
+pb_under = small_tickets(pb)
+print(f"{pb_under[0]} sold a total of ${pb_under[2]:,.2f} in small ticket items!")
+print()
 
+# A more simple example is provided below:
+words = ['dog', 'cat', 'pig', 'bat', 'mouse', 'horse', 'tiger', 'goat', 'ram', 'owl']
 beta = list(takewhile(lambda x: len(x) < 4, words))
 print(beta)
 
@@ -105,6 +109,3 @@ The reason for `[1:]` is that `dropwhile` will stop at the first element where t
 cumulative sales exceed $1000, and then create a new list (`aa`) of all sales figures after that point. This
 approach ensures that the returned sales figures all occur after the $1000 threshold has been crossed, which
 seems to be the qualification criteria for the matching donations program mentioned in the print statements."""
-
-pb_under = small_tickets(pb)
-print(f"{pb_under[0]} sold a total of ${pb_under[2]:,.2f} in small ticket items!")
