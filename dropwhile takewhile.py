@@ -31,6 +31,14 @@ print(f"{h[0]} qualifies for the matching donations over $1000. Their total afte
       f" sales is ${h[2]:,.2f}!")
 print()
 
+# In the following example it is even more clear that dropwhile removes items meeting the condition but RETAINS all 
+# subsequent items, even though some may meet the original condition.  Thus dropwhile is more of a trigger to 
+# begin creating a new list.
+words = ['dog', 'cat', 'pig', 'bat', 'mouse', 'horse', 'tiger', 'goat', 'ram', 'owl']
+alpha = list(dropwhile(lambda x: len(x) < 4, words))
+print(alpha)
+print()
+
 # takewhile: as soon as the opposite of the first condition has been met, EVERYTHING (REGARDLESS) else is excluded
 sq = ("Seattle",
       [21.22, 30.66, 55.84, 447.99, 53.30, 96.36, 47.52, 330.45, 682.22, 11.25, 32.33, 62.12, 1704.11, 55.30, 900.66,
