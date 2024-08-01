@@ -61,5 +61,50 @@ sq_under = small_tickets(sq)
 print(f"{sq_under[0]} sold a total of ${sq_under[2]:,.2f} in small ticket items!")
 print()
 
+words = ['dog', 'cat', 'pig', 'bat', 'mouse', 'horse', 'tiger', 'goat', 'ram', 'owl']
+
+beta = list(takewhile(lambda x: len(x) < 4, words))
+print(beta)
+
+"""Explanation for dropwhile above:
+1. `condition = lambda x: list(accumulate(store[1][:store[1].index(x)+1]))[-1] < 1000`
+
+This line defines a lambda function that serves as the condition for the `dropwhile` function. Let's break it down further:
+
+   a. `lambda x:` creates an anonymous function that takes one parameter `x`.
+   
+   b. `store[1]` is the list of sales figures from the input tuple.
+   
+   c. `store[1].index(x)` finds the index of the current sales figure `x` in the list.
+   
+   d. `store[1][:store[1].index(x)+1]` slices the list from the beginning up to and including the current sales figure.
+   
+   e. `accumulate(...)` creates an iterator of cumulative sums of this slice.
+   
+   f. `list(...)` converts the iterator to a list.
+   
+   g. `[...][-1]` takes the last element of this list, which is the total cumulative sum up to the current sales figure.
+   
+   h. `< 1000` checks if this cumulative sum is less than 1000.
+
+So, this condition returns `True` for each sales figure until the cumulative sum exceeds or equals 1000, and `False` afterwards.
+
+2. `aa = list(dropwhile(condition, store[1]))[1:]`
+
+This line uses the condition we just defined to process the list of sales figures:
+
+   a. `dropwhile(condition, store[1])` creates an iterator that drops elements from `store[1]` as long as the `condition` is `True`.
+   
+   b. `list(...)` converts this iterator to a list.
+   
+   c. `[1:]` slices this list starting from the second element (index 1) to the end.
+
+The reason for `[1:]` is that `dropwhile` will stop at the first element where the condition is `False`
+(i.e., the first sale that makes the cumulative sum exceed or equal 1000). By taking `[1:]`, we exclude this
+"threshold" sale and only keep the ones after it. In essence, these two lines together find the point at which
+cumulative sales exceed $1000, and then create a new list (`aa`) of all sales figures after that point. This
+approach ensures that the returned sales figures all occur after the $1000 threshold has been crossed, which
+seems to be the qualification criteria for the matching donations program mentioned in the print statements."""
+
 pb_under = small_tickets(pb)
 print(f"{pb_under[0]} sold a total of ${pb_under[2]:,.2f} in small ticket items!")
